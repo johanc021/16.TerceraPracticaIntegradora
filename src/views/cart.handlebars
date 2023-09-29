@@ -1,0 +1,19 @@
+<div class="container mt-3">
+    <div class="cart">
+        <h2 class="mb-3">Carrito</h2>
+        <p class="mb-2"><strong>Id carrito:</strong> {{cart._id}}</p>
+        <h5 class="mb-3">Productos:</h5>
+        {{#each cart.products}}
+        <div class="card mb-3">
+            <img src="{{this.product.thumbnail}}" class="card-img-top product-image" alt="Product Image">
+            <div class="card-body">
+                <h6 class="card-title">{{this.product.title}}</h6>
+                <p class="card-text">Código: {{this.product.code}}</p>
+                <p class="card-text">Precio: {{this.product.price}}</p>
+                <p class="card-text">Stock: {{this.product.stock}}</p>
+                <p class="card-text">Categoría: {{this.product.category}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

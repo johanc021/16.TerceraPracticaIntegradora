@@ -1,0 +1,14 @@
+<div>
+    Chat!!
+</div>
+
+<div>
+    {{#each messages}}
+    <p>{{this.user}}: {{this.message}}</p>
+    {{/each}}
+</div>
+
+<div id="messages"></div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="js/index.js"></script>

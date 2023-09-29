@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2 class="mb-4">Productos</h2>
+
+            <div class="d-flex gap-2">
+                {{#each products}}
+                <div class="card" style="width: 18rem;">
+                    <img src="{{thumbnail}}" class="card-img-top" alt="Product Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}</h5>
+                        <p class="card-text">{{description}}</p>
+                        <p class="card-text"><strong>Código:</strong> {{code}}</p>
+                        <p class="card-text"><strong>Precio:</strong> {{price}}</p>
+                        <p class="card-text"><strong>Stock:</strong> {{stock}}</p>
+                        <p class="card-text"><strong>Categoría:</strong> {{category}}</p>
+                        <a href="#" class="btn btn-primary">Agregar al Carrito</a>
+                    </div>
+                </div>
+                
+                {{/each}}
+            </div>
+
+            <div class="pagination justify-content-center mt-2 flex-wrap gap-2">
+                {{#if hasPrevPage}}
+                <a href="/products?page={{prevPage}}" class="btn btn-primary">Anterior</a>
+                {{/if}}
+
+                {{#if hasNextPage}}
+                <a href="/products?page={{nextPage}}" class="btn btn-primary">Siguiente</a>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
