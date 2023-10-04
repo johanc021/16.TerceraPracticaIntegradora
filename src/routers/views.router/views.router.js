@@ -8,8 +8,8 @@ class ViewsRouter {
         this.router.get('/', viewsController.getHome)
         this.router.get('/register', viewsController.getRegister);
         this.router.get('/login', viewsController.getLogin);
-        this.router.get('/resetPassword', viewsController.getResetPassword);
-        this.router.get('/resetPasswordMail', viewsController.getResetPasswordMail);
+        /* this.router.get('/resetPassword', viewsController.getResetPassword); */
+        this.router.get('/resetPassword', viewsController.getResetPasswordMail);
         this.router.get('/profile', authenticate, viewsController.getProfile);
         this.router.get('/products', authenticate, viewsController.getProducts);
         this.router.get('/carts', authenticate, viewsController.getCarts);
