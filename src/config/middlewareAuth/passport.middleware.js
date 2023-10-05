@@ -66,8 +66,6 @@ const initializedPassport = () => {
 
   passport.use('login', new localStrategy(
     { passReqToCallback: true, usernameField: 'email' }, async (req, username, password, done) => {
-      console.log(username)
-      console.log(password)
       try {
         const user = await userModel.findOne({ email: username });
         console.log(user.password)
@@ -86,7 +84,7 @@ const initializedPassport = () => {
   ));
 
   passport.use('resetPassword', new localStrategy(
-    { passReqToCallback: true, usernameField: 'email' }, async (req, res, password) => {
+    { passReqToCallback: true, usernameField: 'token' }, async (req, res, password) => {
       const { token } = req.body
       try {
         // Extrae el usuario desde el token

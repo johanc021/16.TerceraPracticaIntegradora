@@ -10,7 +10,9 @@ document.getElementById('resetPasswordForm').addEventListener('submit', async (e
         return;
     }
 
+
     const token = document.querySelector('input[name="token"]').value;
+
     const data = {
         password,
         token
